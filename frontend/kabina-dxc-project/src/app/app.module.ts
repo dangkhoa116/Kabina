@@ -7,6 +7,8 @@ import { KabinaComponent } from './kabina/kabina.component';
 import { UserListComponent } from './kabina/components/user-list/user-list.component';
 import { HttpClientModule } from "@angular/common/http";
 import { UserComponent } from './kabina/components/user/user.component';
+import { FormsModule } from "@angular/forms";
+import { UserListService } from './kabina/services/user-list.service';
 @NgModule({
   declarations: [
     AppComponent,
@@ -17,9 +19,10 @@ import { UserComponent } from './kabina/components/user/user.component';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    FormsModule
   ],
-  providers: [],
+  providers: [UserListService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
