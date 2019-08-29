@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { UserListService } from '../../services/user-list.service';
-
+import {MatPaginatorModule} from '@angular/material/paginator';
 
 
 @Component({
@@ -10,12 +10,13 @@ import { UserListService } from '../../services/user-list.service';
   styleUrls: ['./user-list.component.css']
 })
 export class UserListComponent implements OnInit {
+  // MatPaginator Inputs
+ 
   public users = [];
   constructor(private _userService: UserListService) { }
 
   ngOnInit() {
-    //this._userService.getUsers().subscribe(data => this.users = data);
-    //console.log(this.users);
+    this._userService.getUsers().subscribe(data => this.users = data);
   }
 
 }

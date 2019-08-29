@@ -11,8 +11,7 @@ export class AppComponent {
 
   }
   ngOnInit() {
-    let obs = this.http.get('https://api.github.com/users/mojombo');
-    obs.subscribe((reponse)=> console.log(reponse));
+    
   }
   title = 'kabina-dxc-project';
 }

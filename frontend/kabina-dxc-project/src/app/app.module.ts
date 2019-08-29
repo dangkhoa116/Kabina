@@ -9,6 +9,8 @@ import { HttpClientModule } from "@angular/common/http";
 import { UserComponent } from './kabina/components/user/user.component';
 import { FormsModule } from "@angular/forms";
 import { UserListService } from './kabina/services/user-list.service';
+import { DataTablesModule } from 'angular-datatables';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -20,7 +22,8 @@ import { UserListService } from './kabina/services/user-list.service';
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    FormsModule
+    FormsModule,
+    DataTablesModule
   ],
   providers: [UserListService],
   bootstrap: [AppComponent]
