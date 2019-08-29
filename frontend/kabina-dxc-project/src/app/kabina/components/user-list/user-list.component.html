@@ -15,7 +15,7 @@
                                 </tr>
                             </thead>
                             <tbody *ngIf="users">
-                                <tr *ngFor="let user of users">
+                                <tr *ngFor="let user of users | paginate: config">
                                     <td>
                                         <img src="{{user.avatar_url}}" alt="">
                                         <a href="#" class="user-link">{{user.login}}</a>
@@ -31,6 +31,12 @@
                                 </tr>
                             </tbody>
                         </table>
+                        <pagination-controls [maxSize]="maxSize"
+                        [directionLinks]="directionLinks"
+                        [autoHide]="autoHide"
+                        [responsive]="responsive"
+                        (pageChange)="pageChanged($event)"></pagination-controls>
+
                     </div>
                 </div>
             </div>

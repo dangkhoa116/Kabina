@@ -10,6 +10,8 @@ import { UserComponent } from './kabina/components/user/user.component';
 import { FormsModule } from "@angular/forms";
 import { UserListService } from './kabina/services/user-list.service';
 import { DataTablesModule } from 'angular-datatables';
+import {NgxPaginationModule} from 'ngx-pagination';
+
 
 @NgModule({
   declarations: [
@@ -23,7 +25,8 @@ import { DataTablesModule } from 'angular-datatables';
     AppRoutingModule,
     HttpClientModule,
     FormsModule,
-    DataTablesModule
+    DataTablesModule,
+    NgxPaginationModule
   ],
   providers: [UserListService],
   bootstrap: [AppComponent]
