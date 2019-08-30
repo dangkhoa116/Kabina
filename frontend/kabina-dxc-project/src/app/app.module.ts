@@ -27,6 +27,7 @@ import {NgxPaginationModule} from 'ngx-pagination';
     FormsModule,
     DataTablesModule,
     NgxPaginationModule
+
   ],
   providers: [UserListService],
   bootstrap: [AppComponent]

@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
 import { UserListService } from '../../services/user-list.service';
 
 
@@ -11,22 +10,19 @@ import { UserListService } from '../../services/user-list.service';
 export class UserListComponent implements OnInit {
  
   public users = [];
-  config: any;
-  public maxSize: number = 7;
-  public directionLinks: boolean = true;
-  public autoHide: boolean = false;
-  public responsive: boolean = true;
+  dtOptions: DataTables.Settings = {};
+  
   constructor(private _userService: UserListService) { }
 
   ngOnInit() {
+    
     this._userService.getUsers().subscribe(data => this.users = data);
-    this.config = {
-      itemsPerPage: 10,
-      currentPage: 1,
-      totalItems: this.users.length
+    console.log(this.users);
+    this.dtOptions = {
+      data: this.users,
+      columns:  [{title: 'User ID', data: 'id'},
+      ]
     };
   }
-  pageChanged(event){
-    this.config.currentPage = event;
-  }
+ 
 }
