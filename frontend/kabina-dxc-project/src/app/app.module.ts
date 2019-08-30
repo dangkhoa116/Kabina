@@ -11,6 +11,7 @@ import { FormsModule } from "@angular/forms";
 import { UserListService } from './kabina/services/user-list.service';
 import { DataTablesModule } from 'angular-datatables';
 import {NgxPaginationModule} from 'ngx-pagination';
+import { HeaderComponent } from './kabina/components/header/header.component';
 
 
 @NgModule({
@@ -18,7 +19,8 @@ import {NgxPaginationModule} from 'ngx-pagination';
     AppComponent,
     KabinaComponent,
     UserListComponent,
-    UserComponent
+    UserComponent,
+    HeaderComponent
   ],
   imports: [
     BrowserModule,
