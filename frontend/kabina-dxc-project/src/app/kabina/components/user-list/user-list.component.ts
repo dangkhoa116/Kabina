@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { UserListService } from '../../services/user-list.service';
-
+import { IUser } from "../user/IUser";
 
 @Component({
   selector: 'app-user-list',
@@ -9,20 +9,18 @@ import { UserListService } from '../../services/user-list.service';
 })
 export class UserListComponent implements OnInit {
  
-  public users = [];
+  public users: IUser[];
   dtOptions: DataTables.Settings = {};
-  
   constructor(private _userService: UserListService) { }
 
   ngOnInit() {
     
-    this._userService.getUsers().subscribe(data => this.users = data);
-    console.log(this.users);
     this.dtOptions = {
       data: this.users,
-      columns:  [{title: 'User ID', data: 'id'},
-      ]
+      pagingType: 'full_numbers',
+      
     };
+    this._userService.getUsers().subscribe(data => this.users = data);
   }
- 
+  
 }
